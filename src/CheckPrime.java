@@ -1,19 +1,27 @@
 import java.util.Scanner;
 
-public class SumOfNaturalNumbers {
-
-    // Create the method public static int NumberSum(int n)
-    // It should calculate and return the sum of first n natural numbers
-    public static int NumberSum(int n) {
-        return n * (n + 1) / 2;
-    }
-
+public class CheckPrime {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         if (scanner.hasNextInt()) {
             int n = scanner.nextInt();
-            int sum = NumberSum(n);
-            System.out.println(sum);
+            boolean isPrime = true;
+
+            if (n <= 1) {
+                isPrime = false;
+            } else {
+                for (int i = 2; i <= Math.sqrt(n); i++) {
+                    if (n % i == 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+         if (isPrime) {
+                System.out.println("Prime");
+            } else {
+                System.out.println("Not Prime");
+            }
         }
         scanner.close();
     }
