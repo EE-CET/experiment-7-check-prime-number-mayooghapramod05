@@ -1,11 +1,20 @@
-public class CheckPrime {
-   
-        // TODO: Read n
-        // TODO: Check if n is prime
-        // Hint:
-        // 1. If n <= 1, it is Not Prime.
-        // 2. Loop from 2 to sqrt(n). If n is divisible by any number, it is Not Prime.
-        // 3. Otherwise, it is Prime.
-        // TODO: Print "Prime" or "Not Prime"
-    
+import java.util.Scanner;
+
+public class SumOfNaturalNumbers {
+
+    // Create the method public static int NumberSum(int n)
+    // It should calculate and return the sum of first n natural numbers
+    public static int NumberSum(int n) {
+        return n * (n + 1) / 2;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        if (scanner.hasNextInt()) {
+            int n = scanner.nextInt();
+            int sum = NumberSum(n);
+            System.out.println(sum);
+        }
+        scanner.close();
+    }
 }
